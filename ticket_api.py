@@ -69,7 +69,6 @@ class TicketAPI:
 
     def create_ticket_with_article(self, title, subject, body_text):
         response = self.create_ticket(title)
-        print(f"Response in api.create_ticket_with_article:\n{response}")
         ticket_id = response["id"]
         reponse_article = self.create_ticket_article(ticket_id, subject, body_text)
         return response, reponse_article

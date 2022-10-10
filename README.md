@@ -8,5 +8,5 @@ To run the code please follow the following steps:
 2. build docker container with: `docker build -t <name>:<version>`
 3. run docker container with: `docker run -v "$PWD":/app --env-file=.env -t -d <name>:<version>`
 4. enter the running docker container with: `docker exec -it <container_name> bash`
-5. in the container execute: `python main.py`
+5. in the container execute: `python main.py` 
 

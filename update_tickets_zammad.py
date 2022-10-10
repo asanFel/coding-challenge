@@ -53,7 +53,8 @@ def update_tickets(ticket_api: TicketApiExtended, complaints: Dict[int, str], pr
     assert len(predictions) == len(complaints), f"Please provide same number of predictions and complaints (issues: {len(predictions), complaints: {len(complaints)}})"
     for ticket_id, prediction in zip(list(complaints.keys()), predictions):
         priority = Converter.label_to_priority(prediction)
-        print(f"Updating ticket {ticket_id} to priority {priority}")
+        if verbose:
+            print(f"Updating ticket {ticket_id} to priority {priority}")
         ticket_api.update_ticket(ticket_id, priority)
 
 
